@@ -1,0 +1,5 @@
+"ad", "blanc", "falc", "mil", "adel", "boff", "ferd", "mung", "adr", "bomb", "frob", "od", "ail", "bram", "fulb", "oth", "alb", "bung", "gam", "sab", "alm", "droc", "hald", "sam", "amb", "drog", "ham", "seg", "band", "durl", "hasc", "serl", "bard", "emm", "hod", "tob", "ben", "erd", "hug", "wan", "biff", "ern", "iv", "wig", "bild", "ever", "mark", "wyd"
+
+"ald", "ard", "ert", "fast", "o", "o", "o", "o", "o", "old", "win", "wise"
+
+"a", "a", "a", "a", "a", "ia", "ia", "ice", "ily", "ina", "wina", "wisa"
