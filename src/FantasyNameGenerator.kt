@@ -216,6 +216,69 @@ class FantasyNameGenerator {
         return fullName
     }
 
+    fun getNameFairAndNobel() :String? {
+        return getNameFairAndNobel(Random.nextBoolean())
+    }
+
+    fun getNameFairAndNobel(isMale: Boolean) :String?
+    {
+        val nameList: Array<Array<String?>> = arrayOf(
+            arrayOf("an", "ar", "cal", "car", "cel", "cir", "clar", "el", "elb", "er", "erl", "est", "far", "fin",
+                "gal", "gan", "gar", "gel", "gil", "ilm"),
+            arrayOf("im", "in", "ir", "ist", "lar", "lir", "lor", "mar", "mel", "mer", "mir", "nim", "nin", "ral",
+                "ran", "rel", "ril", "rim", "rin"),
+            arrayOf("aeg", "ael", "aer", "aes", "aeth", "bel", "ber", "cael", "caer", "cris", "ear", "elth", "eol",
+                "faer", "fean", "find", "ith", "laeg", "lend", "lind"),
+            arrayOf("lith", "maeg", "mind", "mith", "nith", "rael", "rind", "saer", "sar", "seld", "ser", "sil", "silm",
+                "sind", "thael", "thaer", "thal", "thel", "ther", "thir"),
+            arrayOf("ad", "al", "am", "an", "ar", "as", "eb", "ed", "el", "em", "en", "er", "es", "ev", "il", "in",
+                "ir", "ol", "than", "thon"),
+            arrayOf("ad", "dan", "del", "dil", "dir", "fal", "ion", "ion", "lad", "las", "lin", "nar", "or", "orn",
+                "ras", "rior", "rod", "rond", "ros", "thir"),
+            arrayOf("edel", "el", "eth", "ian", "iel", "iel", "ien", "loth", "mir", "rial", "rian", "riel", "rien",
+                "ril", "roel", "sil", "we", "wen", "wen"))
+
+
+        when(Random.nextInt(0,4)){
+            0-> fullName = nameList[0][Random.nextInt(0, nameList[0].size)]
+            1-> fullName = nameList[1][Random.nextInt(0, nameList[1].size)]
+            2-> fullName = nameList[2][Random.nextInt(0, nameList[2].size)]
+            3-> fullName = nameList[3][Random.nextInt(0, nameList[3].size)]
+        }
+        if(Random.nextInt(1,6) > 1) {
+            fullName += nameList[4][Random.nextInt(0, nameList[4].size)]
+        }
+
+        if (isMale) {
+            fullName += nameList[5][Random.nextInt(0, nameList[5].size)]
+        } else {
+            fullName += nameList[6][Random.nextInt(0, nameList[6].size)]
+        }
+        return fullName
+    }
+
+    fun getNameSmallAndSpry(): String?{
+        return getNameSmallAndSpry(Random.nextBoolean())
+    }
+
+    fun getNameSmallAndSpry(isMale: Boolean): String?
+    {
+        val nameList: Array<Array<String?>> = arrayOf(
+            arrayOf("dex", "flax", "flim", "fliss", "flix", "foss", "frisk", "friss", "gess", "glan", "glax", "glim",
+                "gliss", "goss", "hex", "liss", "min", "misk", "raff", "ress", "riff", "rill", "saff", "shim",
+                "tink", "tiss", "trill", "trist", "twill", "twiss", "twisp", "twix", "weft", "wesk", "winn", "wisp"),
+            arrayOf("aldo", "allo", "amo", "ando", "aroll", "aron", "asto", "endo", "eroll", "eron", "esto", "ondo"),
+            arrayOf("afer", "amer", "anel", "arel", "asti", "efer", "enti", "erel", "ifer", "imer", "inel", "irel"))
+
+            fullName = nameList[0][Random.nextInt(0, nameList[0].size)]
+        if(isMale){
+            fullName += nameList[1][Random.nextInt(0, nameList[1].size)]
+        } else{
+            fullName += nameList[2][Random.nextInt(0, nameList[2].size)]
+        }
+        return fullName
+    }
+
 }
 
 fun main(args: Array<String>){
@@ -249,5 +312,15 @@ fun main(args: Array<String>){
     println("\nHomely - Halflings: ")
     for (i in 0..10){
         println(fng.getNameHomely())
+    }
+
+    println("\nNoble and Fair ")
+    for (i in 0..10){
+        println(fng.getNameFairAndNobel())
+    }
+
+    println("\nSmall and Spry")
+    for (i in 0..10){
+        println(fng.getNameSmallAndSpry())
     }
 }
